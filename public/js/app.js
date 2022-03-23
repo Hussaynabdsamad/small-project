@@ -9,6 +9,7 @@ document.querySelector('button').addEventListener('click', (e) => {
     document.getElementById('query1').innerHTML = ''
     document.getElementById('query2').innerHTML = ''
     document.getElementById('query3').innerHTML = ''
+    document.querySelector('img').setAttribute('src', '');
 
  response.json().then((data) => {
      if(data.error) {

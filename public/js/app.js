@@ -5,15 +5,17 @@ document.querySelector('button').addEventListener('click', (e) => {
  let recipe = input.value
 
  fetch('/recipe?recipeName=' + recipe).then((response) => {
-    document.getElementById('quer').innerHTML = 'Loading...'
-    document.getElementById('quer2').innerHTML = ''
+    document.getElementById('query0').innerHTML = 'Loading...'
+    document.getElementById('query1').innerHTML = ''
+    document.getElementById('query2').innerHTML = ''
+    document.getElementById('query3').innerHTML = ''
 
  response.json().then((data) => {
      if(data.error) {
-      document.getElementById('quer').innerHTML = data.error
+      document.getElementById('query0').innerHTML = data.error
      } else {
-      document.getElementById('query0').innerHTML =  `${data.datea.numb} Results`
-      if( data.datea.numb > 30) {
+      document.getElementById('query0').innerHTML =  `${data.number} Results`
+      if( data.number > 30) {
          document.getElementById('query1').innerHTML = 'Be more specific with your search'
       }
            document.getElementById('query2').innerHTML =  data.dtitle

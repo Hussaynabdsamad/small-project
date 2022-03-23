@@ -11,18 +11,18 @@ const findId = (recipe) => {
       if (body.results.length === 0) {
      reject('Unable to find recipe, Try another search.')
       } else {
-          const number = body.totalResults
+          let  number = body.totalResults
        
         if(number >= 100) {
             number = 100
-            console.log(number)
+           
         }
-        console.log(number)
+     
         const num = Math.floor((Math. random() * number));
-        
+   
           resolve({
-              id: body.results[0].id,
-              title : body.results[0].title, 
+              id: body.results[num].id,
+              title : body.results[num].title, 
               numb: body.totalResults
           })
       }

@@ -20,7 +20,7 @@ hbs.registerPartials(partialsPath)
 // Set up static Directory
 app.use(express.static(publicDirectoryPath))
   
-app.get('', (req, res) => {
+app.get( '', (req, res) => {
     res.render('index', {
         title: 'Nut App',
         name: 'Hussayn Abd-samad'
@@ -40,6 +40,7 @@ app.get('', (req, res) => {
          findId(req.query.recipeName).then((data) => {
            getInfo(data.id).then((datea) => {
                res.send({
+                   number: data.numb,
                    dtitle : data.title,
                    datea
           })
